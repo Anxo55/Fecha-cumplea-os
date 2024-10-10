@@ -8,6 +8,10 @@ document.getElementById('birthday-form').addEventListener('submit', function(eve
 
   birthdayDate.setFullYear(today.getFullYear());
 
+  if (birthdayDate < today) {
+    birthdayDate.setFullYear(today.getFullYear() + 1);
+  }
+
   const differenceInMilliseconds = birthdayDate - today;
   const daysRemaining = Math.ceil(differenceInMilliseconds / (1000 * 60 * 60 * 24));
 
